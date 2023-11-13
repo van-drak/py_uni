@@ -283,26 +283,6 @@ def dec_literal(input):
 
 
 def dec_number(input):
-    """
-    tmp_str = input
-    if tmp_str[-1] == '.' and tmp_str.count('.') == 1:
-        tmp_str = tmp_str[:-1]
-
-    if (input[0] not in SIGN and input[0].isdigit() == False) or input.count('.') > 1 or (tmp_str[0] == '0' and len(tmp_str) > 1 and tmp_str[1].isdigit()):
-        return None
-
-    if input[0] in SIGN:
-        tmp_str = tmp_str[1:]
-
-    if tmp_str == '':
-        return None
-
-    for i in range(len(tmp_str)):
-        if tmp_str[i] != '.' and tmp_str[i].isdigit() == False:
-            return None
-
-    return float(input) if input[0] != '+' else float(tmp_str)
-    """
     tmp = input[1:] if input[0] in SIGN else input
     if tmp == '' or not tmp[0].isdigit() or tmp.count('.') > 1 or (len(tmp) > 1 and tmp[0] == '0' and tmp[1].isdigit()):
         return None
